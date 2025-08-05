@@ -1,12 +1,12 @@
 %global __python %{__python3}
 Name:           vulkan-headers-latest
-Version:        1.4.321.0
+Version:        1.4.324
 Release:        %autorelease
 Summary:        Vulkan Header files and API registry
 
 License:        Apache-2.0
 URL:            https://github.com/KhronosGroup/Vulkan-Headers
-Source0:        %url/archive/vulkan-sdk-%{version}.tar.gz#/Vulkan-Headers-sdk-%{version}.tar.gz
+Source0:        %url/archive/v%{version}/Vulkan-Headers-%{version}.tar.gz
 
 BuildRequires:  cmake3
 BuildRequires:  ninja-build
@@ -20,7 +20,7 @@ Conflicts:      vulkan-headers
 Vulkan Header files and API registry
 
 %prep
-%autosetup -n Vulkan-Headers-vulkan-sdk-%{version}
+%autosetup -n Vulkan-Headers-%{version}
 
 
 %build

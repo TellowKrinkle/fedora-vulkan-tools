@@ -1,13 +1,13 @@
 %global debug_package %{nil}
 
 Name:           vulkan-utility-libraries-latest
-Version:        1.4.321.0
+Version:        1.4.324
 Release:        %autorelease
 Summary:        Vulkan utility libraries
 
 License:        Apache-2.0
 URL:            https://github.com/KhronosGroup/Vulkan-Utility-Libraries
-Source0:        %url/archive/vulkan-sdk-%{version}.tar.gz#/Vulkan-Utility-Libraries-sdk-%{version}.tar.gz
+Source0:        %url/archive/v%{version}/Vulkan-Utility-Libraries-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -34,7 +34,7 @@ Conflicts:      vulkan-utility-libraries-devel%{?_isa}
 %{summary}
 
 %prep
-%autosetup -p1 -n Vulkan-Utility-Libraries-vulkan-sdk-%{version}
+%autosetup -p1 -n Vulkan-Utility-Libraries-%{version}
 
 %build
 %cmake3 -DCMAKE_BUILD_TYPE=Release \
