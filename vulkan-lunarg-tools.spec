@@ -1,11 +1,21 @@
+%global is_sdk 1
+
 Name:           vulkan-lunarg-tools
-Version:        1.4.321
+Version:        1.4.328.1
 Release:        1%{?dist}
 Summary:        LunarG Vulkan tools
 
+%if %{is_sdk}
+	%define tag vulkan-sdk-%{version}
+	%define zip %{tag}
+%else
+	%define tag v%{version}
+	%define zip %{version}
+%endif
+
 License:        Apache-2.0
 URL:            https://github.com/LunarG/VulkanTools
-Source0:        %{url}/archive/v%{version}/VulkanTools-%{version}.tar.gz
+Source0:        %{url}/archive/%{tag}/VulkanTools-%{zip}.tar.gz
 
 BuildRequires:  g++
 BuildRequires:  cmake
@@ -14,11 +24,11 @@ BuildRequires:  cmake(Qt6Gui)
 BuildRequires:  cmake(Qt6Network)
 BuildRequires:  cmake(Qt6Widgets)
 BuildRequires:  cmake(valijson)
-BuildRequires:  cmake(VulkanHeaders) >= %{version}
 BuildRequires:  cmake(VulkanLoader)
-BuildRequires:  cmake(VulkanUtilityLibraries)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(wayland-client)
+BuildRequires:  vulkan-headers >= %{version}
+BuildRequires:  vulkan-utility-libraries-devel >= %{version}
 
 %description
 %{summary}
@@ -36,7 +46,7 @@ Summary:        Vulkan Configurator
 Vulkan Configurator
 
 %prep
-%autosetup -n VulkanTools-%{version}
+%autosetup -n VulkanTools-%{zip}
 
 %build
 %cmake -DCMAKE_BUILD_TYPE=Release
