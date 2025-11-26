@@ -1,6 +1,6 @@
 %global __python %{__python3}
 Name:           vulkan-headers-latest
-Version:        1.4.333
+Version:        1.4.334
 Release:        %autorelease
 Summary:        Vulkan Header files and API registry
 
