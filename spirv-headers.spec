@@ -1,8 +1,8 @@
-%global commit b824a462d4256d720bebb40e78b9eb8f78bbb305
+%global commit 04f10f650d514df88b76d25e83db360142c7b174
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           spirv-headers-latest
-Version:        1.4.335.0
+Version:        1.4.341
 Release:        %autorelease
 Summary:        Header files from the SPIR-V registry
 

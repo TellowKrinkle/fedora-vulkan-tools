@@ -1,7 +1,7 @@
-%global is_sdk 1
+%global is_sdk 0
 
 Name:           vulkan-lunarg-tools
-Version:        1.4.335.0
+Version:        1.4.341
 Release:        1%{?dist}
 Summary:        LunarG Vulkan tools
 
