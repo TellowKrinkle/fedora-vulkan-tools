@@ -17,7 +17,7 @@ License:        Apache-2.0
 URL:            https://github.com/KhronosGroup/Vulkan-Headers
 Source0:        %url/archive/%{tag}/Vulkan-Headers-%{zip}.tar.gz
 
-BuildRequires:  cmake3
+BuildRequires:  cmake
 BuildRequires:  ninja-build
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -33,7 +33,7 @@ Vulkan Header files and API registry
 
 
 %build
-%cmake3 -DCMAKE_INSTALL_LIBDIR=%{_libdir} -GNinja
+%cmake -DCMAKE_INSTALL_LIBDIR=%{_libdir} -GNinja
 %cmake_build
 
 %install

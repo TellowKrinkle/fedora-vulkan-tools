@@ -12,7 +12,7 @@ Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 
 BuildArch:      noarch
 
-BuildRequires:  cmake3
+BuildRequires:  cmake
 BuildRequires:  ninja-build
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -48,7 +48,7 @@ chmod a-x include/spirv/1.2/spirv.py
 
 
 %build
-%cmake3 -DCMAKE_INSTALL_LIBDIR=%{_lib} -GNinja
+%cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} -GNinja
 %cmake_build
 
 %install

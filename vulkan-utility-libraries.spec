@@ -20,7 +20,7 @@ Source0:        %url/archive/%{tag}/Vulkan-Utility-Libraries-%{zip}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
-BuildRequires:  cmake3
+BuildRequires:  cmake
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  vulkan-headers >= %{version}
 Provides:       vulkan-utility-libraries = %{version}-%{release}
@@ -46,11 +46,11 @@ Conflicts:      vulkan-utility-libraries-devel%{?_isa}
 %autosetup -p1 -n Vulkan-Utility-Libraries-%{zip}
 
 %build
-%cmake3 -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_INSTALL_LIBDIR=%{_libdir} \
-        -DBUILD_TESTS:BOOL=OFF \
-        -DVUL_WERROR:BOOL=OFF \
-        -DUPDATE_DEPS:BOOL=OFF
+%cmake -DCMAKE_BUILD_TYPE=Release \
+       -DCMAKE_INSTALL_LIBDIR=%{_libdir} \
+       -DBUILD_TESTS:BOOL=OFF \
+       -DVUL_WERROR:BOOL=OFF \
+       -DUPDATE_DEPS:BOOL=OFF
 %cmake_build
 
 %install
