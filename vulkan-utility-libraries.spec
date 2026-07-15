@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:           vulkan-utility-libraries-latest
-Version:        1.4.355
+Version:        1.4.356
 Release:        %autorelease
 Summary:        Vulkan utility libraries
 
