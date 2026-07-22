@@ -1,7 +1,7 @@
 %undefine _cmake_shared_libs
 
 Name:           gfxreconstruct
-Version:        1.4.350.0
+Version:        1.4.357.0
 Release:        1%{?dist}
 Summary:        Vulkan API Capture and Replay Tools
 
@@ -28,6 +28,12 @@ BuildRequires:  vulkan-headers >= %{version}
 Summary:        Tools for manipulating and replaying gfxreconstruct captures
 
 %description    tools
+%{summary}
+
+%package        devel
+Summary:        Development files for %{name}
+
+%description    devel
 %{summary}
 
 %prep
@@ -57,6 +63,9 @@ sed -i "s/if defined(_WIN64) || defined(__x86_64__) || defined(__aarch64__)/if (
 
 %files          tools
 %{_bindir}/gfxrecon*
+
+%files          devel
+%{_includedir}/gfxr
 
 %changelog
 * Wed Nov 26 2025 TellowKrinkle <tellowkrinkle@gmail.com> - 1.4.328.1-1
