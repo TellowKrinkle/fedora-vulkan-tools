@@ -1,8 +1,8 @@
-%global is_sdk 1
+%global is_sdk 0
 %global debug_package %{nil}
 
 Name:           vulkan-utility-libraries-latest
-Version:        1.4.357.0
+Version:        1.4.360
 Release:        %autorelease
 Summary:        Vulkan utility libraries
 
@@ -32,6 +32,7 @@ Provides:       vulkan-utility-libraries%{?_isa} = %{version}-%{release}
 %package        devel
 Summary:        Development files for %{name}
 Requires:       vulkan-headers >= %{version}
+Requires:       vulkan-utility-libraries = %{version}-%{release}
 Obsoletes:      vulkan-validation-layers-devel < 1.3.268.0-2
 Provides:       vulkan-validation-layers-devel = %{version}-%{release}
 Provides:       vulkan-validation-layers-devel%{?_isa} = %{version}-%{release}
@@ -56,13 +57,15 @@ Conflicts:      vulkan-utility-libraries-devel%{?_isa}
 %install
 %cmake_install
 
-%files devel
+%files
 %license LICENSE.md
 %doc README.md
+%{_libdir}/libVulkanLayerSettings.so
+%{_libdir}/libVulkanSafeStruct.so
+
+%files devel
 %{_includedir}/vulkan/
 %{_libdir}/cmake/VulkanUtilityLibraries/*.cmake
-%{_libdir}/libVulkanLayerSettings.a
-%{_libdir}/libVulkanSafeStruct.a
 
 %changelog
 %autochangelog
