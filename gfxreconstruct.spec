@@ -1,7 +1,7 @@
 %undefine _cmake_shared_libs
 
 Name:           gfxreconstruct
-Version:        1.4.357.0
+Version:        1.4.363.0
 Release:        1%{?dist}
 Summary:        Vulkan API Capture and Replay Tools
 
