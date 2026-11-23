@@ -1,8 +1,8 @@
-%global is_sdk 1
+%global is_sdk 0
 %global debug_package %{nil}
 
 Name:           vulkan-utility-libraries-latest
-Version:        1.4.363.0
+Version:        1.4.368
 Release:        %autorelease
 Summary:        Vulkan utility libraries
 
@@ -65,6 +65,8 @@ Conflicts:      vulkan-utility-libraries-devel%{?_isa}
 
 %files devel
 %{_includedir}/vulkan/
+%{_datadir}/vulkan/layers_settings_schema.json
+%{_datadir}/vulkan/validate_json_schema.py
 %{_libdir}/cmake/VulkanUtilityLibraries/*.cmake
 
 %changelog
